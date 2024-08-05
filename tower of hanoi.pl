@@ -1,7 +1,11 @@
 hanoi(1, Source, _, Destination) :-
 
-    write('Move disk from '), write(Source),
-    write(' to '), write(Destination), nl.
+    write('Move top disk from '),
+    write(X),
+    write(' to '),
+    write(Y),
+    nl.
+
 hanoi(N, Source, Auxiliary, Destination) :-
 
     M is N - 1,
