@@ -1,14 +1,18 @@
-person('John Doe', date(1990, 5, 20)).
-person('Jane Smith', date(1985, 8, 15)).
-person('Alice Johnson', date(1992, 12, 5)).
-person('Bob Brown', date(1980, 3, 10)).
+dob(john, '1990-05-15').
+dob(sarah, '1985-10-20').
+dob(mike, '1978-03-08').
+dob(emily, '1995-12-03').
+get_dob(Name, DateOfBirth) :-
+    dob(Name, DateOfBirth).
+
+get_name(DateOfBirth, Name) :-
+    dob(Name, DateOfBirth).
+
+%OUTPUT:
+
+%?- get_dob(john, DateOfBirth).
+%DateOfBirth = '1990-05-15'.
 
 
-birthdate(Name, Date) :- person(Name, Date).
-
-
-name_by_birthdate(Date, Name) :- person(Name, Date).
-
-% Example Queries:
-% ?- birthdate('John Doe', Date).
-% ?- name_by_birthdate(date(1990, 5, 20), Name).
+%?- get_name('1995-12-03', Name).
+%Name = emily.
